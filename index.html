@@ -5,29 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eduardo Jara - Currículum Vitae (CV)</title>
+    <link rel="stylesheet" href="/CSS/cv_style.css">
 </head>
 
 <body>
     <header>
-        <h1>Eduardo Adolfo Jara Vazquez</h1>
-        <h2>Técnico en Informática</h2>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#acerca-de-mi">Acerca de mí</a></li>
-                <li><a href="#experiencia">Experiencia Laboral</a></li>
-                <li><a href="#educacion">Educación</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+        <nav class="menu">
+            <section class="menu__container"> 
+                <img src="/assets/IMG/Foto de perfil.png" class="logo__img">
+                <h1 class="menu__logo">Eduardo Jara</h1>
+                <!-- <h2 class="menu__logo2">Técnico en Informática</h2> -->
+                <ul class="menu__links">
+
+                    <li class="menu__item menu__item--show">
+                        <a href="#" class="menu__link">Acerca de mí
+                            <img src="assets/arrow.svg" class="menu__arrow">
+                        </a>
+                        <ul class="menu__nesting">
+                            <li class="menu__inside">
+                                <a href="#acerca-de-mi" class="menu__link menu__link--inside">Acerca de mi</a>
+                            </li>
+                        </ul>
+                    </li>
+<!--                     <li class="menu__item"><a href="#" class="menu__link">Inicio</a></li> -->
+                    <li class="menu__item menu__item--show">
+                    <li class="menu__item menu__item--show"><a href="#experiencia" class="menu__link">Experiencia Laboral</a></li>
+                    <li class="menu__item menu__item--show"><a href="#educacion" class="menu__link">Educación</a></li>
+                    <li class="menu__item menu__item--show"><a href="#habilidades" class="menu__link">Habilidades</a></li>
+                    <li class="menu__item menu__item--show"><a href="#contacto" class="menu__link">Contacto</a></li>
+                </ul>
+                    <div class="menu__hamburguer">
+                        <img src="assets/menu.svg" class="menu__img">
+                    </div>
+            </section>
         </nav>
     </header>
     <main>
         <section class="acerca-de-mi">
-            <h3 id="acerca-de-mi">Acerca de mí</h3>
-            <p>Soy una persona responsable, dinámica y creativa, con facilidad de adaptación y facilidad de trabajar en
-                equipo, con iniciativa de resolución de conflictos, seria, honesta y con muchas ganas de trabajar y de
-                aprender, con don de gente, comunicativo.</p>
+            <div class="mi">
+                <h3 id="acerca-de-mi">Acerca de mí</h3>
+                <p>Soy una persona responsable, dinámica y creativa, con facilidad de adaptación y facilidad de trabajar en equipo, con iniciativa de resolución de conflictos, seria, honesta y con muchas ganas de trabajar y de aprender, con don de gente, comunicativo.</p>
+            </div>
         </section>
         <section class="experiencia-laboral">
             <h3 id="experiencia">Experiencia Laboral</h3>
@@ -40,8 +58,6 @@
                 algunas
                 características de Windows para un entorno educativo. Clonación de discos con Acronis True Image.</p>
         </section>
-
-        <!-- <p id="breve-descripcion">Soy Técnico en Informática con nociones en desarrollo de software, especializado en aplicaciones web FullStack utilizando Python. Habilidad para trabajar tanto en el front-end como en el back-end, con sólidos conocimientos en el framework Django. Apasionado por la creación de soluciones eficientes y escalables, y en constante actualización sobre las últimas tecnologías en desarrollo web.</p> -->
         <section class="formacion-academica">
             <h3 id="educacion">Educación</h3>
             <ul>
@@ -80,15 +96,28 @@
     <footer>
         <!-- Información de Contacto -->
         <h4 id="contacto">Contacto</h4>
-        <p>Teléfono:</p>
-        <a href="tel:+595981910134">(+595) 981910134</a>
-        <p>Correo Electrónico:</p>
-        <a href="mailto:supeer2002@gamil.com">supeer2002@gmail.com</a>
-        <p>Linkedin</p>
-        <a href="https://www.linkedin.com/eduardo-adolfo-jara-vazquez">Eduardo Adolfo Jara Vazquez</a>
-        <p>GitHub</p>
-        <a href="https://github.com/SupperSystem">SupperSystem</a>
+        <div class="telefono">
+            <p>Teléfono:</p>
+            <img src="assets/whatsapp.svg">
+            <a href="tel:+595981910134">(+595) 981910134</a>
+        </div>
+        <div class="correo">
+            <p>Correo Electrónico:</p>
+            <img src="assets/email.svg">
+            <a href="mailto:supeer2002@gamil.com">supeer2002@gmail.com</a>
+        </div>
+        <div class="linkedin">
+            <p>Linkedin</p>
+            <img src="assets/linkedIn.svg">
+            <a href="https://www.linkedin.com/in/eduardo-adolfo-jara-vazquez">Eduardo Adolfo Jara Vazquez</a>
+        </div>
+        <div class="github">
+            <p>GitHub</p>
+            <img src="assets/github.svg">
+            <a href="https://github.com/SupperSystem">SupperSystem</a>
+        </div>
     </footer>
+    <script src="JS/app.js"></script>
 </body>
 
 </html>

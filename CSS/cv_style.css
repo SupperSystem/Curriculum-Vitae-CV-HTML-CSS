@@ -1,0 +1,366 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    background-color: #c0c0c0;
+}
+header{
+    font-family: "Titillium Web", sans-serif;
+/*     font-size: 400; */
+    font-style: normal;
+}
+
+.menu__logo2{
+    font-size: 10px;
+    display: inline-flexbox;
+    justify-self: center;
+    text-align: center;
+    position: absolute;
+    bottom: 10;
+}
+
+.logo__img{
+    width: 65px;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu{
+    color: #fff;
+    height: 70px;
+/*     position:sticky; */
+}
+
+.menu__container{
+    background-color: rgb(0, 55, 128);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+
+}
+
+.menu__links{
+    max-height: 100vh;
+    transition: transform .5s;
+    display: flex;
+}
+
+.menu__item{
+    list-style: none;
+    position: relative;
+    height: 10%;
+    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --transform: rotate(-90deg);
+}
+
+.menu__item:hover{
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    --transform: rotate(0);
+}
+
+.menu__link{
+    color: #fff;
+    text-decoration: none;
+    padding: 0 30px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.menu__link:hover{
+    background-color: #34528d;
+}
+
+.menu__arrow{
+    transform: var(--transform);
+    transition: transform .3s;
+    display: block;
+    margin-left: 3px;
+}
+
+.menu__nesting{
+    list-style: none;
+    transition:clip-path .3s;
+    clip-path: var(--clip);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background-color: #253a64;
+}
+
+.menu__hamburguer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.menu__link--inside{
+    padding: 30px 100px 30px 20px;
+}
+
+.menu__link--inside:hover{
+    background-color: #798499;
+}
+
+/* .menu__hamburguer:hover{
+    transform: var(--transform);
+} */
+
+.menu__img{
+    display: block;
+    width: 36px;
+}
+@media (max-width:800px) {
+    .menu__hamburguer{
+        display: flex;
+        clip-path: var(--clip);
+    }
+    .menu__item{
+        --clip:0;
+        overflow: hidden;
+    }
+    .menu__item--active{
+        --transform: rotate(0);
+        --background: #34528d;
+    }
+    .menu__item--show{
+        background-color: var(--background);
+    }
+
+    .menu__links{
+        position: fixed;
+        max-width: 400px;
+        width: 100%;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        background-color: #003780;
+        overflow-y: auto;
+        display: grid;
+        grid-auto-rows: max-content;
+        transform: translateX(100%);
+    }
+    .menu__link{
+        padding: 25px 0;
+        padding-left: 30px;
+        height: auto;
+/*         color: #fff; */
+        position: absolute;
+    }
+
+    .menu__links--show{
+        transform: unset;
+        width: 100%;
+    }
+
+    .menu__arrow{
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .menu__nesting{
+        display: grid;
+        position: unset;
+        width: 100%;
+        transform: translateY(0);
+        height: 0;
+        transition: height .3s;
+    }
+
+    .menu__link--inside{
+        width: 90%;
+        margin-left: auto;
+        border-left: 1px solid #798499;
+    }
+}
+
+main{
+    font-family: "Lato", sans-serif;
+    font-size: 400;
+    font-weight: normal;
+}
+
+@media (min-width:400px) and (max-width:800px) {
+    .acerca-de-mi{
+        width: 80%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        max-width: 700px;
+        max-height: 400px;
+        min-width: fit-content;
+    }
+
+    .experiencia-laboral{
+        height: 40vh;
+        min-width: fit-content;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .formacion-academica{
+        width: 70%;
+        height: 350vh;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .habilidades{
+        width: 70%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    footer{
+        display: flex;
+        align-self: flex-end;
+    }
+}
+
+
+.acerca-de-mi{
+    max-width: 900px;
+    max-height: 278px;
+    background-color: #fff;
+    margin: 10px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+/*     border: 2px solid red; */
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+.mi{
+    text-align: center;
+/*     border: 2px solid red; */
+}
+
+.acerca-de-mi .mi {
+    color: #00439b;
+}
+.mi h3{
+    color: #0057da;
+}
+
+.experiencia-laboral{
+    background-color: #fff;
+    max-width: 5000px;
+    width: 85.5%;
+    height: 30%;
+    margin: 20px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    color: #00439b;
+}
+.experiencia-laboral h3{
+    color: #0057da;
+}
+
+.experiencia-laboral ul li {
+    list-style: none;
+}
+
+.formacion-academica{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    max-height: 400px;
+    margin: 25px;
+    gap: 5px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    color: #00439b;
+}
+.formacion-academica h3 {
+    color:#0057da
+}
+.formacion-academica ul li{
+    list-style: none;
+}
+
+.habilidades{
+    text-align: center;
+    background-color: #fff;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 5px 5px;
+    box-shadow: 5px 5px 5px black;
+    color: #00439b;
+}
+.habilidades #habilidades{
+    text-align: center;
+    color: #0057da;
+}
+
+.habilidades ul li{
+    list-style: none;
+}
+
+footer{
+    font-family: "Titillium Web", sans-serif;
+    font-size: 700;
+    font-weight: bold;
+    color: #fff;
+    max-width: 7000px;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003780;
+    gap: 8%;
+/*     flex: 1; */
+}
+
+footer > #contacto{
+    display: flex;
+    top: 0;
+    left: 0px;
+    right: 0px;
+}
+
+footer div a {
+    text-decoration: none;
+    color: #fff;
+}
