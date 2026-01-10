@@ -12,12 +12,13 @@
                 let height = 0;
                 element.classList.toggle('menu__item--active');
 
+                if(subMenu && subMenu.classList.contains('menu__nesting')){
+                    if(subMenu.clientHeight === 0){
+                        height = subMenu.scrollHeight;
+                    }
 
-                if(subMenu.clientHeight === 0){
-                    height = subMenu.scrollHeight;
+                    subMenu.style.height = `${height}px`;
                 }
-
-                subMenu.style.height = `${height}px`;
 
             });
         });
@@ -26,7 +27,7 @@
     const deleteStyleHeight = ()=>{
         listElements.forEach(element=>{
 
-            if(element.children[1].getAttribute('style')){
+            if(element.children[1] && element.children[1].getAttribute('style')){
                 element.children[1].removeAttribute('style');
                 element.classList.remove('menu__item--active');
             }
